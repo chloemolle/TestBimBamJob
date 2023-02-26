@@ -1,6 +1,5 @@
-import { Position, Direction } from "../types";
+import { Position, Direction, Correspondance } from "../types";
 
-type Correspondance = { E: Direction, S: Direction, W: Direction, N: Direction }
 const RightMoveCorrespondance : Correspondance = { E: 'S', S: 'W', W: 'N', N: 'E' };
 const LeftMoveCorrespondance : Correspondance = { E: 'N', S: 'E', W: 'S', N: 'W' };
 

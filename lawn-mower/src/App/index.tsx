@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import LawnMower from './interfaces/LawnMower';
-import { Position, Direction } from './types';
+import LawnMower from '../interfaces/LawnMower';
+import { Position, Direction } from '../types';
 
 function App() {
   const [lawnMowersInfo, setLawnMowersInfo] = useState<Array<string>>(['']);

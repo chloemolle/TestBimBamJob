@@ -37,8 +37,7 @@ const LawnMower = (maxPosition: Position, initialPosition: Position, initialDire
         getDirection () {
             return _currentDirection
         },
-        move (instructions: string) {
-            const instructionList = instructions.split('');
+        move (instructionList: Array<string>) {
             for (const instruction of instructionList) {
                 if ([RIGHT, LEFT].includes(instruction)) changeDirection(instruction);
                 if (instruction === FORWARD) moveForward();

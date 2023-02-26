@@ -15,7 +15,7 @@ function App() {
       const initialPosition: Position = [parseInt(initialInfo[0].split('')[0]), parseInt(initialInfo[0].split('')[1])]
     
       const lawnMowers = LawnMower(maxPosition, initialPosition, initialInfo[1] as Direction);
-      lawnMowers.move(dataList[i + 1]);
+      lawnMowers.move(dataList[i + 1].split(''));
     
       const lawnMowerNumber = Math.ceil(i/2);
       infos.push(`Position finale pour la tondeuse ${lawnMowerNumber}: [${lawnMowers.getPosition()}] et orientation

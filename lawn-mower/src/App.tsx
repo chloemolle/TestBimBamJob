@@ -8,18 +8,18 @@ function App() {
 
   const moveLawnMowers = (dataList: Array<string>) =>  {
     const maxPosition: Position = [dataList[0].split('')[0], dataList[0].split('')[1]];
-    const test = [];
+    const lawnMowerInfoList = [];
 
     for (let i = 1; i < dataList.length - 1; i += 2) {
       const initialInfo = dataList[i].split(' ');
       const initialPosition: Position = [initialInfo[0].split('')[0], initialInfo[0].split('')[1]]
       const lawnMowers = LawnMower(maxPosition, initialPosition, initialInfo[1] as Direction);
-
-      test.push(lawnMowers.getPosition());
-      test.push(lawnMowers.getDirection());
+      lawnMowers.move(dataList[i + 1]);
+      lawnMowerInfoList.push(lawnMowers.getPosition());
+      lawnMowerInfoList.push(lawnMowers.getDirection());
     }
 
-    setData(test);
+    setData(lawnMowerInfoList);
   }
 
   const handleFile = (file: File) => {

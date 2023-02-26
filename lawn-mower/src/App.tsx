@@ -7,12 +7,12 @@ function App() {
   const [data, setData] = useState<any>('');
 
   const moveLawnMowers = (dataList: Array<string>) =>  {
-    const maxPosition: Position = [dataList[0].split('')[0], dataList[0].split('')[1]];
+    const maxPosition: Position = [parseInt(dataList[0].split('')[0]), parseInt(dataList[0].split('')[1])];
     const lawnMowerInfoList = [];
 
     for (let i = 1; i < dataList.length - 1; i += 2) {
       const initialInfo = dataList[i].split(' ');
-      const initialPosition: Position = [initialInfo[0].split('')[0], initialInfo[0].split('')[1]]
+      const initialPosition: Position = [parseInt(initialInfo[0].split('')[0]), parseInt(initialInfo[0].split('')[1])]
       const lawnMowers = LawnMower(maxPosition, initialPosition, initialInfo[1] as Direction);
       lawnMowers.move(dataList[i + 1]);
       lawnMowerInfoList.push(lawnMowers.getPosition());

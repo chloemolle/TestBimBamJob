@@ -1,14 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
+import LawnMower from './interfaces/LawnMower';
+import { Position, Direction } from './types';
 
 function App() {
-  const [data, setData] = useState<String | ArrayBuffer | null>('');
+  const [data, setData] = useState<any>('');
+
+  const moveLawnMowers = (dataList: Array<string>) =>  {
+    const maxPosition: Position = [dataList[0].split('')[0], dataList[0].split('')[1]];
+    const test = [];
+
+    for (let i = 1; i < dataList.length - 1; i += 2) {
+      const initialInfo = dataList[i].split(' ');
+      const initialPosition: Position = [initialInfo[0].split('')[0], initialInfo[0].split('')[1]]
+      const lawnMowers = LawnMower(maxPosition, initialPosition, initialInfo[1] as Direction);
+
+      test.push(lawnMowers.getPosition());
+      test.push(lawnMowers.getDirection());
+    }
+
+    setData(test);
+  }
 
   const handleFile = (file: File) => {
     const fileReader = new FileReader();
     fileReader.readAsText(file);
     fileReader.onload = function() {
-      setData(fileReader.result);
+      if (fileReader.result) moveLawnMowers(fileReader.result.toString().split('\n'));
     };
   }
 

@@ -19,7 +19,7 @@ const LawnMower = (maxPosition: Position, initialPosition: Position, initialDire
                 if (_currentPosition[0] < maxPosition[0]) _currentPosition[0] += 1;
                 break;
             case SOUTH :
-                if (_currentPosition[0] > 0) _currentPosition[1] -= 1;
+                if (_currentPosition[1] > 0) _currentPosition[1] -= 1;
                 break;
             case WEST :
                 if (_currentPosition[0] > 0) _currentPosition[0] -= 1;

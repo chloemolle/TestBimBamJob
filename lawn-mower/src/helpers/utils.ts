@@ -1,4 +1,4 @@
-import LawnMower from './interfaces/LawnMower';
+import LawnMower from '../interfaces/LawnMower';
 import { Position, Direction } from './types';
 
 export const moveLawnMowers = (data: string | ArrayBuffer) =>  {

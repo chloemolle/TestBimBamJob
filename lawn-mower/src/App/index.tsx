@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import { moveLawnMowers } from '../utils';
+import { moveLawnMowers } from '../helpers/utils';
 
 function App() {
   const [lawnMowersInfo, setLawnMowersInfo] = useState<Array<string>>(['']);

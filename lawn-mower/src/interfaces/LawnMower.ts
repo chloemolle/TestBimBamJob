@@ -1,5 +1,5 @@
-import { Position, Direction, Correspondance } from "../types";
-import { RIGHT, LEFT, FORWARD, NORTH, EAST, WEST, SOUTH } from "../constants"
+import { Position, Direction, Correspondance } from '../helpers/types';
+import { RIGHT, LEFT, FORWARD, NORTH, EAST, WEST, SOUTH } from '../helpers/constants';
 
 const RightMoveCorrespondance : Correspondance = { [EAST]: SOUTH, [SOUTH]: WEST, [WEST]: NORTH, [NORTH]: EAST };
 const LeftMoveCorrespondance : Correspondance = { [EAST]: NORTH, [SOUTH]: EAST, [WEST]: SOUTH, [NORTH]: WEST };
